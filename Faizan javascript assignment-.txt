@@ -1,0 +1,148 @@
+javascript assignment->
+1.
+var s = "this is my faizan khan";
+
+function reverseWords(s) {
+    let finalStr = "";
+    for (let i = 0; i < s.length; i++) {
+        let ans = "";
+
+        // Build the reversed word
+        while (i < s.length && s[i] !== ' ') {
+            ans = s[i] + ans;
+            i++;
+        }
+
+        // Append the reversed word to the final string
+        finalStr += ans + ' ';
+    }
+
+    return finalStr;
+}
+
+var reversedString = reverseWords(s);
+console.log(reversedString);
+
+
+
+2.
+
+var arr = [5, 2, 9, 1, 5, 6];
+
+arr.sort(function(a, b) {
+    return b - a; // Compare in descending order
+});
+
+console.log(arr);
+
+
+
+
+
+
+
+JAVA ASSIGNMENT->
+
+1.import java.util.Random;
+
+public class ArrayShuffler {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
+        shuffleArray(array);
+        
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+    }
+
+    public static void shuffleArray(int[] array) {
+        int n = array.length;
+        Random rand = new Random();
+
+        for (int i = n - 1; i > 0; i--) {
+            // Generate a random index within the remaining unshuffled portion of the array
+            int j = rand.nextInt(i + 1);
+
+            // Swap elements at i and j
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+}
+
+
+2.import java.util.HashMap;
+
+public class RomanToInteger {
+    public static void main(String[] args) {
+        String romanNumeral = "IX"; // Replace with your Roman numeral
+        
+        int result = romanToInt(romanNumeral);
+        System.out.println("The integer equivalent of " + romanNumeral + " is: " + result);
+    }
+
+    public static int romanToInt(String s) {
+        HashMap<Character, Integer> romanMap = new HashMap<>();
+        romanMap.put('I', 1);
+        romanMap.put('V', 5);
+        romanMap.put('X', 10);
+        romanMap.put('L', 50);
+        romanMap.put('C', 100);
+        romanMap.put('D', 500);
+        romanMap.put('M', 1000);
+
+        int result = 0;
+        int prevValue = 0;
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            int currentValue = romanMap.get(s.charAt(i));
+
+            if (currentValue < prevValue) {
+                result -= currentValue;
+            } else {
+                result += currentValue;
+            }
+
+            prevValue = currentValue;
+        }
+
+        return result;
+    }
+}
+
+
+3.
+import java.util.HashMap;
+import java.io.*;
+
+public class RomanToInteger {
+    public static void main(String[] args) {
+        String abc1 = "HII I AM FAIZAN KHAN";
+        String abc2= abc1.replace(" ","");
+      
+    boolean ans=    checkpanagram(abc2);
+    
+    
+    
+    System.out.println(ans);    
+        
+     
+    }
+    
+
+public static boolean checkpanagram(String s){
+     s=s.toLowerCase();
+     for(int i=0;i<s.length();i++){
+         if(s.charAt(i)>='a' && s.charAt(i)<='z'){
+             continue;
+         }else{
+             return false;
+         }
+     }
+     return true;
+}    
+
+}
+
+
